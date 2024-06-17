@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bookmark Manager</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <img src="img/lyngtek_logo.png" style="height: 75px; background-color: white;" />
+        <h1>Bookmark Manager</h1>
+        <input type="text" id="search" placeholder="Søg i bogmærker og kategorier..." style="width: 200px;">
+    </header>
+    <main>
+        <section id="add-category">
+            <h2>Tilføj kategori</h2>
+            <form id="category-form">
+                <input type="text" id="category-name" placeholder="Kategori navn" required>
+                <input type="file" id="category-image" accept="image/*" required>
+                <button type="submit">Tilføj kategori</button>
+            </form>
+        </section>
+        <section id="add-bookmark">
+            <h2>Tilføj bogmærker</h2>
+            <form id="bookmark-form">
+                <input type="text" id="bookmark-name" placeholder="Navn/titel" required>
+                <input type="url" id="bookmark-url" placeholder="URL/link" required>
+                <select id="bookmark-category" required>
+                    <option value="" disabled selected>Vælg kategori</option>
+                </select>
+                <input type="file" id="bookmark-image" accept="image/*" style="width: 15%;">
+                <button type="submit">Tilføj bogmærke</button>
+            </form>
+        </section>
+        <section id="categories">
+            <h2>Kategorier</h2>
+            <div id="category-list"></div>
+        </section>
+        <section id="bookmarks">
+            <h2>Bogmærker</h2>
+            <div id="bookmark-list"></div>
+        </section>
+    </main>
+
+    <!-- Popup container -->
+    <div id="popup-container" class="popup-container">
+        <div id="popup-content" class="popup-content"></div>
+        <button onclick="closePopup()">Close</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
